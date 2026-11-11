@@ -74,7 +74,7 @@ describe('the command', () => {
   }, 60_000)
   const run = (...args: string[]) => {
     try {
-      return { code: 0, out: execFileSync(process.execPath, [cli, ...args], { encoding: 'utf8' }) }
+      return { code: 0, out: execFileSync(process.execPath, [cli, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }) }
     } catch (e) {
       const err = e as { status: number; stdout: string; stderr: string }
       return { code: err.status, out: err.stdout + err.stderr }
