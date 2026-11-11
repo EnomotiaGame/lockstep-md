@@ -1,0 +1,27 @@
+export {
+  DocsSyntaxError,
+  INDEX_FILE,
+  SECTION_FILE,
+  parseArticle,
+  parseDocs,
+  parseIndex,
+  parseSection,
+  shapeDifferences,
+  splitFrontmatter,
+  toBundle,
+  toStructure,
+  yamlScalar,
+} from './parse.js'
+export type {
+  Block,
+  BlockText,
+  Difference,
+  DirectiveSpec,
+  DocsFile,
+  NoteVariant,
+  ParseOptions,
+  ParsedArticle,
+  ParsedDocs,
+  ParsedSection,
+  StructureSection,
+} from './parse.js'

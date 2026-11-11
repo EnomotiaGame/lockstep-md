@@ -1,0 +1,4 @@
+---
+id: start
+---
+# Getting started

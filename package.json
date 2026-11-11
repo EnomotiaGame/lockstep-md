@@ -1,0 +1,76 @@
+{
+  "name": "lockstep-md",
+  "version": "0.1.0",
+  "description": "Multilingual Markdown docs that stay in lockstep: a strict Markdown subset whose build fails when a translation drifts from the original.",
+  "keywords": [
+    "markdown",
+    "i18n",
+    "translation",
+    "documentation",
+    "localization",
+    "vite-plugin",
+    "docs",
+    "parity"
+  ],
+  "homepage": "https://github.com/EnomotiaGame/lockstep-md#readme",
+  "bugs": "https://github.com/EnomotiaGame/lockstep-md/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnomotiaGame/lockstep-md.git"
+  },
+  "license": "MIT",
+  "author": "TRUETHINKS LTD (https://enomotia.net)",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "default": "./dist/vite.js"
+    },
+    "./package.json": "./package.json",
+    "./virtual": {
+      "types": "./dist/virtual.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "lockstep-md": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && cp src/virtual.d.ts dist/virtual.d.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "peerDependencies": {
+    "vite": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.6",
+    "vitest": "^3.2.7"
+  }
+}

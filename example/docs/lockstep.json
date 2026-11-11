@@ -1,0 +1,6 @@
+{
+  "original": "en",
+  "directives": {
+    "pricing": { "args": ["monthly", "yearly"] }
+  }
+}
